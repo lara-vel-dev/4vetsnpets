@@ -1,10 +1,11 @@
 import ComingSoon from '../components/ComingSoon';
+import Timer from '../components/Timer';
 function Status() {
     return (
-      <>
-        <h1>Status!</h1>
-        <ComingSoon/>
-      </>
+      <div className='status-container'>
+        <h1>Pet status</h1>
+        <Timer/>
+      </div>
     );
   }
   
