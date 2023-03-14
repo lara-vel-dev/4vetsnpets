@@ -1,0 +1,51 @@
+.timer {
+    @include flex(column);
+    height: 90vh;
+    .txt-container {
+        @include flex(column);
+        margin-top: 150px;
+        img {
+            margin-bottom: 25px;
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+        }
+        p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    }
+    .pg-container {
+        width: 50%;
+        .progress {
+            margin-top: 230px;
+            height: 15px;
+            appearance: none;
+            border-radius: 5px;
+            background-image: linear-gradient(to right, map-get($timer-colors, "primary"), map-get($timer-colors, "secondary"), map-get($timer-colors, "tertiary"));
+            transition: width 0.5s;
+            &::-webkit-slider-thumb {
+                appearance: none;
+            }
+        }
+    }
+    .btn-container {
+        @include flex(row);
+        margin-top: 25px;
+        button {
+            margin: 50px 10px;
+            width: 150px;
+            background-color: map-get($colors, "font-color");
+            color: map-get($colors, "white");
+            font-size: 17px;
+            padding: 10px 5px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                box-shadow: 3px 5px 10px 3px rgba(0, 0, 0, 0.5);
+                font-size: 18.5px;
+                background-color: map-get($colors, "primary");
+            }
+        }
+    }
+}

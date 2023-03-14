@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { CRUD } from "../context/CRUDContext";
+import { UserAuth } from "../context/AuthContext";
 
 function PetList() {
+  const { user } = UserAuth();
   const [dataArray, setDataArray] = useState([]);
   const { crudDelete, getDatabase } = CRUD();
 
@@ -38,6 +40,7 @@ function PetList() {
               </div>
               <div
                 className="vetpet-list__btns"
+                style={user.rol === "user" ? { display: "none" } : {}}
               >
                 <button onClick={() => crudDelete(data.id, "pets")} style={{"background":"red"}}>
                   Delete
